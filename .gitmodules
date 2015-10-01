@@ -1,0 +1,4 @@
+[submodule "cast-companion-library"]
+	path = cast-companion-library
+	url = git://github.com/remcomokveld/CastCompanionLibrary-android.git
+	branch = master

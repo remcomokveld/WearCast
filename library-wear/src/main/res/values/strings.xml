@@ -1,0 +1,4 @@
+<resources>
+    <string name="wear_cast_error">Something went wrong</string>
+    <string name="wear_cast_cast_to">Cast to %1$s</string>
+</resources>

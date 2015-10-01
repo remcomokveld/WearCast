@@ -1,0 +1,33 @@
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="nl.rmokveld.wearcast.wear">
+
+    <application tools:ignore="AllowBackup">
+
+        <service
+            android:name=".WearCastIntentService">
+            <intent-filter>
+                <action android:name="nl.rmokveld.wearcast.action.UPDATE_ROUTES" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".WearCastListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.BIND_LISTENER"/>
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".WearCastNotificationActivity"
+            android:allowEmbedded="true"
+            android:exported="true"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.DeviceDefault.Light"/>
+        <activity
+            android:name=".WearCastStatusActivity"
+            android:theme="@android:style/Theme.DeviceDefault.Light"/>
+
+    </application>
+
+</manifest>

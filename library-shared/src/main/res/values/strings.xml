@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="wear_cast_searching">Searching for\n%1$s</string>
+    <string name="wear_cast_connecting">Connecting to\n%1$s</string>
+    <string name="wear_cast_loading">Loading\n%1$s</string>
+    <string name="wear_cast_playing">Playing\n%1$s</string>
+</resources>

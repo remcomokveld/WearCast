@@ -1,0 +1,21 @@
+<manifest xmlns:tools="http://schemas.android.com/tools"
+          package="nl.rmokveld.wearcast.phone"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+    <application tools:ignore="AllowBackup">
+
+        <service android:name=".WearCastIntentService"/>
+        <service android:name=".WearCastService"/>
+        <service android:name=".WearCastListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.BIND_LISTENER"/>
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>

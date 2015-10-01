@@ -1,0 +1,38 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.4.0-beta4'
+        classpath 'com.jakewharton.sdkmanager:gradle-plugin:0.12.0'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.1.1"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+ext {
+    majorVersion = 0
+    minorVersion = 1
+    versionCode = (majorVersion * 100000) + (minorVersion * 1000) + Integer.parseInt(System.getenv("BUILD_NUMBER")?:"0");
+    versionName = String.format("%d.%d.%s", majorVersion, minorVersion, System.getenv("BUILD_NUMBER")?:"dev")
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+
+    ext {
+        projVersion = rootProject.versionName
+    }
+}
+
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
